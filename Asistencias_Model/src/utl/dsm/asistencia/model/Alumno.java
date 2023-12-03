@@ -11,7 +11,7 @@ public class Alumno {
     public Alumno() {
     }
 
-    public Alumno(Persona persona, int idAlumno) {
+    public Alumno(int idAlumno, Persona persona) {
         this.persona = persona;
         this.idAlumno = idAlumno;
     }

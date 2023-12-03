@@ -12,7 +12,8 @@ import java.sql.*;
  * @author adria
  */
 public class PadreController {
-    public void login() throws Exception{
+
+    public void login() throws Exception {
         ConexionMySQL mysql = new ConexionMySQL();
         Connection con = mysql.open();
         System.out.println("Conectado");

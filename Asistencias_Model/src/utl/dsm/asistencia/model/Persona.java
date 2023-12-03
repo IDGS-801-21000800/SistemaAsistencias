@@ -5,6 +5,7 @@ package utl.dsm.asistencia.model;
  * @author Angel
  */
 public class Persona {
+
     int idPersona;
     String nombre, primerApellido, segundoApellido, clave, contrasenia;
 
@@ -89,7 +90,5 @@ public class Persona {
         sb.append('}');
         return sb.toString();
     }
-    
-   
-    
+
 }

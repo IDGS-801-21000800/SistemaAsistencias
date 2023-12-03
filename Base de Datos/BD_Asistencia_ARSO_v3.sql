@@ -35,7 +35,7 @@ FOREIGN KEY (idPersona) REFERENCES persona(idPersona));
 -- ----------------------------------------------------------------------------------------------
 create table Carrera (
 	idCarrera int auto_increment primary key,
-    carrera varchar(45),
+    carrera varchar(70),
     especialidad varchar(45)
 );
 
@@ -51,11 +51,8 @@ CREATE TABLE Grupo(
     grado varchar(45),
     grupo varchar(45),
     idCarrera int,
-    idMateria int,
-	FOREIGN KEY (idCarrera) REFERENCES Carrera(idCarrera),
-	FOREIGN KEY (idMateria) REFERENCES Materia(idMateria)
+	FOREIGN KEY (idCarrera) REFERENCES Carrera(idCarrera)
 );
-
 
 
 -- Crear la tabla Alumnos
@@ -64,7 +61,6 @@ CREATE TABLE Alumno (
     idPersona int,
     idGrupo int,
 	FOREIGN KEY (idPersona) REFERENCES persona(idPersona),
-
 	constraint fk_idgrupo FOREIGN KEY (idGrupo) REFERENCES grupo(idgrupo)
 );
 

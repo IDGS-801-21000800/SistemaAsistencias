@@ -11,13 +11,12 @@ public class ConexionMySQL {
         String user = "root";
         String password = "root";
         String url = "jdbc:mysql://localhost:3306/asistencia_BD?allowPublicKeyRetrieval=true&useSSL=false&useUnicode=true&characterEncoding=utf-8";
-        
+
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(url, user, password);
             return conn;
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
