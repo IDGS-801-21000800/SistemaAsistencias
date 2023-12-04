@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Estilos del primer card */
+    .card-one {
+      margin-top: 50px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-one-header {
+      text-align: center;
+      padding: 20px;
+      background-color: #343a40;
+      color: #ffffff;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .card-one-body {
+      padding: 20px;
+    }
+
+    /* Estilos del segundo card */
+    .card-two {
+      margin-top: 50px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-two-header {
+      text-align: center;
+      padding: 20px;
+      background-color: #343a40;
+      color: #ffffff;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .card-two-body {
+      padding: 20px;
+    }
+
+    /* Estilos del tercer card (con margen) */
+    .card-three {
+      margin-top: 50px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-three-header {
+      text-align: center;
+      padding: 20px;
+      background-color: #343a40;
+      color: #ffffff;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .card-three-body {
+      padding: 20px;
+    }
+
+    /* Estilos para la tabla de registros */
+    .table-container {
+      margin-top: 20px;
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    .table th, .table td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .table th {
+      background-color: #343a40;
+      color: #ffffff;
+    }
+  </style>
+  <title>Dashboard</title>
+</head>
+<body>
+
+  <!-- Primer card -->
+  <div class="card card-one">
+    <div class="card-one-header">
+      <h5 class="card-title">Parte Uno</h5>
+    </div>
+    <div class="card-one-body">
+      <p class="card-text">Nombre</p>
+      <p class="card-text">Carrera</p>
+      <p class="card-text">Logo</p>
+    </div>
+  </div>
+
+  <!-- Segundo card -->
+  <div class="card card-two mt-5">
+    <div class="card-two-header">
+      <h5 class="card-title">Parte Dos</h5>
+    </div>
+    <div class="card-two-body">
+      <p class="card-text">Carrera</p>
+      <p class="card-text">Materia</p>
+      <p class="card-text">Maestro</p>
+    </div>
+  </div>
+
+  <!-- Tercer card -->
+  <div class="card card-three mt-5">
+    <div class="card-three-header">
+      <h5 class="card-title">Parte Tres</h5>
+    </div>
+    <div class="card-three-body">
+      <div class="table-container">
+        <h5 class="mb-4">Registros</h5>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Horario</th>
+              <th>Estatus de Asistencia</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Puedes llenar esta tabla con datos dinámicos -->
+            <tr>
+              <td>2023-01-01</td>
+              <td>10:00 AM</td>
+              <td>Asistió</td>
+            </tr>
+            <tr>
+              <td>2023-01-02</td>
+              <td>02:00 PM</td>
+              <td>No Asistió</td>
+            </tr>
+            <!-- ... Más filas ... -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (opcional, pero necesario para algunos componentes de Bootstrap) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
