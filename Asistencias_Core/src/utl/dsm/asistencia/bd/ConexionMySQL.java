@@ -10,6 +10,7 @@ public class ConexionMySQL {
     public Connection open() {
         String user = "root";
         
+        
         String password = "root";
         String url = "jdbc:mysql://localhost:3306/asistencia_BD?allowPublicKeyRetrieval=true&useSSL=false&useUnicode=true&characterEncoding=utf-8";
 
