@@ -28,6 +28,11 @@ public class Persona {
         this.clave = clave;
         this.contrasenia = contrasenia;
     }
+    public Persona(int idPersona, String nombre, String contrasenia) {
+    this.idPersona = idPersona;
+    this.nombre = nombre;
+    this.contrasenia = contrasenia;
+}
 
     public int getIdPersona() {
         return idPersona;

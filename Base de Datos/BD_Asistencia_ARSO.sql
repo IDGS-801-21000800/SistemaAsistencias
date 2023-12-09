@@ -10,8 +10,24 @@ create table persona(
 	clave varchar(45),
 	contrasenia varchar(45)
 );
+-- VISTA PARA EL USUARIO --
+CREATE VIEW vistaPersona AS
+SELECT idPersona, nombre, primerApellido, segundoApellido, clave, contrasenia
+FROM persona;
 
+DELIMITER $$
+CREATE PROCEDURE validarPersona(
+    IN p_claveUsuario VARCHAR(60),
+    IN p_contrasenia VARCHAR(60)
+)
+BEGIN
+    SELECT * FROM persona 
+    WHERE clave = p_claveUsuario AND contrasenia = p_contrasenia;
+END$$
+DELIMITER ;
 
+SELECT * FROM vistaPersona;
+SELECT * FROM vistaPersona WHERE clave= "AL230002" AND contrasenia= "AL230002";
 
 -- Crear la tabla Maestros
 CREATE TABLE Maestro (
