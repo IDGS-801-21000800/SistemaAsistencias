@@ -1,0 +1,102 @@
+
+        body {
+  background-image: url('Assets/Imagenes/2.jpg');
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+  /* También puedes agregar propiedades adicionales según tus necesidades */
+}
+
+/* Estilos del primer card (Parte Uno) */
+.card-one {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #05266D; /* Cambiado a azul (#05266D) */
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-one-header {
+  display: flex;
+  align-items: center;
+}
+
+.label-value {
+  margin-left: 10px;
+  font-weight: bold; /* Hace que el texto sea en negrita */
+}
+
+.welcome-text {
+  font-size: 28px; /* Tamaño de fuente más grande para Bienvenido */
+}
+
+/* Estilos del segundo card */
+.card-two {
+  margin-top: 150px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-two-header {
+  text-align: center;
+  padding: 20px;
+  background-color: #343a40;
+  color: #ffffff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-two-body {
+  padding: 20px;
+}
+
+/* Estilos del tercer card (con margen) */
+.card-three {
+  margin-top: 50px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-three-header {
+  text-align: center;
+  padding: 20px;
+  background-color: #343a40;
+  color: #ffffff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-three-body {
+  padding: 20px;
+}
+
+/* Estilos para la tabla de registros */
+.table-container {
+  margin-top: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th, .table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #343a40;
+  color: #ffffff;
+}
