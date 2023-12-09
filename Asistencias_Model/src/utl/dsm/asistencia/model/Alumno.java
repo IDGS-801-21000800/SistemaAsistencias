@@ -5,15 +5,25 @@ package utl.dsm.asistencia.model;
  * @author Angel
  */
 public class Alumno {
-  Persona persona  ;
   int idAlumno ;
+  Persona persona  ;
+  Grupo grupo;
 
     public Alumno() {
     }
 
-    public Alumno(int idAlumno, Persona persona) {
+    public Alumno(int idAlumno, Persona persona, Grupo grupo) {
         this.persona = persona;
         this.idAlumno = idAlumno;
+        this.grupo = grupo;
+    }
+
+    public Grupo getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(Grupo grupo) {
+        this.grupo = grupo;
     }
 
     public Alumno(Persona persona) {
