@@ -5,6 +5,7 @@ package utl.dsm.asistencia.model;
  * @author Angel
  */
 public class Asistencia {
+
     int idAsistencia;
     Alumno alumno;
     Horario horario;
@@ -80,8 +81,5 @@ public class Asistencia {
         sb.append('}');
         return sb.toString();
     }
-    
-    
-    
-    
+
 }

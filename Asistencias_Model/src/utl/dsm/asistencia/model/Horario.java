@@ -7,52 +7,24 @@ package utl.dsm.asistencia.model;
 public class Horario {
    int idHorario;
    String dia, horaInicio, horaFin;
-   String periodo;
    Maestro maestro;
    Grupo grupo;
    Materia materia;
-<<<<<<< HEAD
    Calendario calendario;
-=======
->>>>>>> 6c57e664d688960caccdbbc1b510299e98f99c7c
 
     public Horario() {
     }
     
 
-<<<<<<< HEAD
     public Horario(int idHorario, String dia, String horaInicio, String horaFin, Maestro maestro, Grupo grupo, Materia materia, Calendario calendario) {
-=======
-    public String getPeriodo() {
-        return periodo;
-    }
-
-    public void setPeriodo(String periodo) {
-        this.periodo = periodo;
-    }
-
-    public Materia getMateria() {
-        return materia;
-    }
-
-    public void setMateria(Materia materia) {
-        this.materia = materia;
-    }
-
-    public Horario(int idHorario, String dia, String horaInicio, String horaFin, String periodo, Maestro maestro, Grupo grupo, Materia materia) {
->>>>>>> 6c57e664d688960caccdbbc1b510299e98f99c7c
         this.idHorario = idHorario;
         this.dia = dia;
         this.horaInicio = horaInicio;
         this.horaFin = horaFin;
-        this.periodo = periodo;
         this.maestro = maestro;
         this.grupo = grupo;
         this.materia = materia;
-<<<<<<< HEAD
         this.calendario = calendario;
-=======
->>>>>>> 6c57e664d688960caccdbbc1b510299e98f99c7c
     }
 
 

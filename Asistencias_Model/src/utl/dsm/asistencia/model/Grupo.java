@@ -5,9 +5,10 @@ package utl.dsm.asistencia.model;
  * @author adria
  */
 public class Grupo {
-  int idGrupo;
-  String grado, grupo;
-  Carrera carrera;
+
+    int idGrupo;
+    String grado, grupo;
+    Carrera carrera;
 
     public Grupo(int idGrupo, String grado, String grupo, Carrera carrera) {
         this.idGrupo = idGrupo;
@@ -63,7 +64,4 @@ public class Grupo {
         return sb.toString();
     }
 
-    
-  
-  
 }
