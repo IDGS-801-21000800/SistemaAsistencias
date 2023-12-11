@@ -1,38 +1,32 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package utl.dsm.asistencia.model;
 
 /**
  *
- * @author Angel
+ * @author adria
  */
 public class Horario {
    int idHorario;
    String dia, horaInicio, horaFin;
    Maestro maestro;
    Grupo grupo;
+   Materia materia;
+   Calendario calendario;
 
     public Horario() {
     }
+    
 
-    public Horario(int idHorario, String dia, String horaInicio, String horaFin, Maestro maestro, Grupo grupo) {
+    public Horario(int idHorario, String dia, String horaInicio, String horaFin, Maestro maestro, Grupo grupo, Materia materia, Calendario calendario) {
         this.idHorario = idHorario;
         this.dia = dia;
         this.horaInicio = horaInicio;
         this.horaFin = horaFin;
         this.maestro = maestro;
         this.grupo = grupo;
+        this.materia = materia;
+        this.calendario = calendario;
     }
 
-    public Horario(String dia, String horaInicio, String horaFin, Maestro maestro, Grupo grupo) {
-        this.dia = dia;
-        this.horaInicio = horaInicio;
-        this.horaFin = horaFin;
-        this.maestro = maestro;
-        this.grupo = grupo;
-    }
 
     public int getIdHorario() {
         return idHorario;
@@ -82,6 +76,22 @@ public class Horario {
         this.grupo = grupo;
     }
 
+    public Materia getMateria() {
+        return materia;
+    }
+
+    public void setMateria(Materia materia) {
+        this.materia = materia;
+    }
+
+    public Calendario getCalendario() {
+        return calendario;
+    }
+
+    public void setCalendario(Calendario calendario) {
+        this.calendario = calendario;
+    }
+    
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
