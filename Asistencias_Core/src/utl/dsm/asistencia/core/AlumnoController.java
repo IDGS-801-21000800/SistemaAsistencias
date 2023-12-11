@@ -12,7 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 import utl.dsm.asistencia.model.Alumno;
 import utl.dsm.asistencia.model.Asistencia;
+<<<<<<< HEAD
 import utl.dsm.asistencia.model.Calendario;
+=======
+>>>>>>> 6c57e664d688960caccdbbc1b510299e98f99c7c
 import utl.dsm.asistencia.model.Carrera;
 import utl.dsm.asistencia.model.Grupo;
 import utl.dsm.asistencia.model.Materia;
@@ -45,11 +48,19 @@ public class AlumnoController {
                     rs.getString("dia"),
                     rs.getString("horaInicio"),
                     rs.getString("horaFin"),
+<<<<<<< HEAD
                     maestro,
                     new Grupo(rs.getInt("idGrupo"), rs.getString("grado"), rs.getString("grupo"),
                             new Carrera(rs.getInt("idcarrera"), rs.getString("carrera"), rs.getString("especialidad"))),
                     new Materia(rs.getInt("idMateria"), rs.getString("nombre")),
                     new Calendario(rs.getInt("idCalendario"), rs.getString("vacacionInicio"), rs.getString("vacacionFin"), rs.getString("periodoInicio"), rs.getString("periodoFin")));
+=======
+                    rs.getString("periodo"),
+                    maestro,
+                    new Grupo(rs.getInt("idGrupo"), rs.getString("grado"), rs.getString("grupo"),
+                            new Carrera(rs.getInt("idcarrera"), rs.getString("carrera"), rs.getString("especialidad"))),
+                    new Materia(rs.getInt("idMateria"), rs.getString("nombre")));
+>>>>>>> 6c57e664d688960caccdbbc1b510299e98f99c7c
 
             hors.add(horario);
         }
@@ -96,6 +107,10 @@ public class AlumnoController {
                             rs.getString("dia"),
                             rs.getString("horaInicio"),
                             rs.getString("horaFin"),
+<<<<<<< HEAD
+=======
+                            rs.getString("periodo"),
+>>>>>>> 6c57e664d688960caccdbbc1b510299e98f99c7c
                             new Maestro(
                                     rs.getInt("idMaestro"),
                                     new Persona(0,
@@ -107,8 +122,12 @@ public class AlumnoController {
                             new Materia(
                                     rs.getInt("idMateria"),
                                     rs.getString("nombre")
+<<<<<<< HEAD
                             ),
                     new Calendario(rs.getInt("idCalendario"), rs.getString("vacacionInicio"), rs.getString("vacacionFin"), rs.getString("periodoInicio"), rs.getString("periodoFin"))
+=======
+                            )
+>>>>>>> 6c57e664d688960caccdbbc1b510299e98f99c7c
                     ),
                     rs.getString("fecha"),
                     rs.getString("estatus")

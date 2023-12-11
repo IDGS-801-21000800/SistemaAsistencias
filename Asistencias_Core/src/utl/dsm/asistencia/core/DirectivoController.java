@@ -13,7 +13,10 @@ import java.util.List;
 import utl.dsm.asistencia.bd.ConexionMySQL;
 import utl.dsm.asistencia.model.Alumno;
 import utl.dsm.asistencia.model.Asistencia;
+<<<<<<< HEAD
 import utl.dsm.asistencia.model.Calendario;
+=======
+>>>>>>> 6c57e664d688960caccdbbc1b510299e98f99c7c
 import utl.dsm.asistencia.model.Carrera;
 import utl.dsm.asistencia.model.Grupo;
 import utl.dsm.asistencia.model.Horario;
@@ -44,6 +47,7 @@ public class DirectivoController {
                     rs.getString("grado"),
                     rs.getString("grupo"),
                     new Carrera(rs.getInt("idCarrera"), rs.getString("carrera"), rs.getString("especialidad")));
+<<<<<<< HEAD
 
             groups.add(grupo);
         }
@@ -55,6 +59,19 @@ public class DirectivoController {
         return groups;
     }
 
+=======
+            
+            groups.add(grupo);
+        }
+        
+        rs.close();
+        pstmt.close();
+        conn.close();
+        
+        return groups;
+    }
+    
+>>>>>>> 6c57e664d688960caccdbbc1b510299e98f99c7c
     public List<Horario> getHorario(int idGrupo) throws Exception, SQLException {
         ConexionMySQL mysql = new ConexionMySQL();
         Connection conn = mysql.open();
@@ -76,11 +93,19 @@ public class DirectivoController {
                     rs.getString("dia"),
                     rs.getString("horaInicio"),
                     rs.getString("horaFin"),
+<<<<<<< HEAD
                     maestro,
                     new Grupo(rs.getInt("idGrupo"), rs.getString("grado"), rs.getString("grupo"),
                             new Carrera(rs.getInt("idcarrera"), rs.getString("carrera"), rs.getString("especialidad"))),
                     new Materia(rs.getInt("idMateria"), rs.getString("nombre")),
                     new Calendario(rs.getInt("idCalendario"), rs.getString("vacacionInicio"), rs.getString("vacacionFin"), rs.getString("periodoInicio"), rs.getString("periodoFin")));
+=======
+                    rs.getString("periodo"),
+                    maestro,
+                    new Grupo(rs.getInt("idGrupo"), rs.getString("grado"), rs.getString("grupo"),
+                            new Carrera(rs.getInt("idcarrera"), rs.getString("carrera"), rs.getString("especialidad"))),
+                    new Materia(rs.getInt("idMateria"), rs.getString("nombre")));
+>>>>>>> 6c57e664d688960caccdbbc1b510299e98f99c7c
 
             hors.add(horario);
         }
@@ -90,12 +115,21 @@ public class DirectivoController {
 
         return hors;
     }
+<<<<<<< HEAD
 
     public List<Asistencia> getListaAsistencia(int idMateria, int idGrupo) throws SQLException {
         ConexionMySQL mysql = new ConexionMySQL();
         Connection conn = mysql.open();
 
         String sql = "select * from vistaasistencia where idmateria = " + idMateria + " and idGrupo = " + idGrupo;
+=======
+    
+    public List<Asistencia> getListaAsistencia(int idMateria, int idGrupo) throws SQLException{
+        ConexionMySQL mysql = new ConexionMySQL();
+        Connection conn = mysql.open();
+
+        String sql = "select * from vistaasistencia where idmateria = " + idMateria +" and idGrupo = " +idGrupo;
+>>>>>>> 6c57e664d688960caccdbbc1b510299e98f99c7c
 
         PreparedStatement pstmt = conn.prepareStatement(sql);
         ResultSet rs = pstmt.executeQuery();
@@ -126,6 +160,10 @@ public class DirectivoController {
                             rs.getString("dia"),
                             rs.getString("horaInicio"),
                             rs.getString("horaFin"),
+<<<<<<< HEAD
+=======
+                            rs.getString("periodo"),
+>>>>>>> 6c57e664d688960caccdbbc1b510299e98f99c7c
                             new Maestro(
                                     rs.getInt("idMaestro"),
                                     new Persona(0,
@@ -137,8 +175,12 @@ public class DirectivoController {
                             new Materia(
                                     rs.getInt("idMateria"),
                                     rs.getString("nombre")
+<<<<<<< HEAD
                             ),
                             new Calendario(rs.getInt("idCalendario"), rs.getString("vacacionInicio"), rs.getString("vacacionFin"), rs.getString("periodoInicio"), rs.getString("periodoFin"))
+=======
+                            )
+>>>>>>> 6c57e664d688960caccdbbc1b510299e98f99c7c
                     ),
                     rs.getString("fecha"),
                     rs.getString("estatus")
@@ -149,16 +191,25 @@ public class DirectivoController {
         rs.close();
         pstmt.close();
         conn.close();
+<<<<<<< HEAD
 
         return asistencias;
     }
 
     public void justificarAsistencia(int idAsistencia) throws SQLException {
+=======
+        
+        return asistencias;
+    }
+    
+    public void justificarAsistencia(int idAsistencia) throws SQLException{
+>>>>>>> 6c57e664d688960caccdbbc1b510299e98f99c7c
         ConexionMySQL mysql = new ConexionMySQL();
         Connection conn = mysql.open();
 
         String sql = "update asistencia set estatus = 'j' where idAsistencia = " + idAsistencia;
         PreparedStatement pstmt = conn.prepareStatement(sql);
+<<<<<<< HEAD
 
         int i = pstmt.executeUpdate();
 
@@ -166,4 +217,13 @@ public class DirectivoController {
         conn.close();
     }
 
+=======
+        
+        int i = pstmt.executeUpdate();
+        
+        pstmt.close();
+        conn.close();
+    }
+    
+>>>>>>> 6c57e664d688960caccdbbc1b510299e98f99c7c
 }
