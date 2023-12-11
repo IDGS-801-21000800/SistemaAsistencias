@@ -12,8 +12,10 @@ import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import java.util.List;
+import utl.dsm.asistencia.core.ControllerAcceso;
 import utl.dsm.asistencia.core.DirectivoController;
 import utl.dsm.asistencia.model.Asistencia;
+import utl.dsm.asistencia.model.Directivo;
 import utl.dsm.asistencia.model.Grupo;
 import utl.dsm.asistencia.model.Horario;
 
@@ -23,6 +25,20 @@ import utl.dsm.asistencia.model.Horario;
  */
 @Path("directivo")
 public class DirectivoREST {
+    
+    @Path("loadDirectivo")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response loadMaestro(
+            @QueryParam("idPersona") int idPersona
+    ) throws Exception {
+        ControllerAcceso ca = new ControllerAcceso();
+        
+        Directivo al = ca.loadDirectivo(idPersona);
+        String directivo = new Gson().toJson(al);
+        
+        return Response.status(Response.Status.OK).entity(directivo).build();
+    }
 
     @Path("getGrupos")
     @GET
@@ -65,9 +81,6 @@ public class DirectivoREST {
     
     
     /**
-     *
-     * List<Asistencia> asistencias = dc.getListaAsistencia(1, 1); String
-     * jsonasistencias = new Gson().toJson(asistencias);
      *
      * dc.justificarAsistencia(0);
      */

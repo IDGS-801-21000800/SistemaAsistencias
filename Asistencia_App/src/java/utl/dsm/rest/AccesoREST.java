@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package utl.dsm.rest;
 
 import com.google.gson.Gson;
@@ -41,30 +37,34 @@ public class AccesoREST {
 
         ControllerAcceso controlador = new ControllerAcceso(); // Reemplaza con el nombre de tu controlador
 
-        String mensaje ="";
+        String mensaje = "";
+        String msj = "";
         try {
-            boolean resultado = controlador.validarCredenciales(usuario, contrasenna);
-            if (resultado) {
+            int resultado = controlador.validarCredenciales(usuario, contrasenna);
+            if (resultado > 0) {
 
                 System.out.println("Credenciales válidas");
                 System.out.println("Usuario: " + usuario);
                 System.out.println("Contraseña: " + contrasenna);
                 mensaje = "{\"mensaje\": \"Credenciales válidas\"}";
+                msj = "{\"mensaje\": \"Credenciales válidas\", \"idPersona\":" + resultado + "}";
+                
+                System.out.println(msj);
             } else {
 
                 System.out.println("Credenciales inválidas");
                 System.out.println("Usuario: " + usuario);
                 System.out.println("Contraseña: " + contrasenna);
-                mensaje = "{\"mensaje\": \"Credenciales inválidas\"}";
+                msj = "{\"mensaje\": \"Credenciales inválidas\"}";
 
             }
         } catch (IOException e) {
             e.printStackTrace();
-            mensaje = "{\"error\": \"Error de entrada/salida al procesar la solicitud\"}";
+            msj = "{\"error\": \"Error de entrada/salida al procesar la solicitud\"}";
         } catch (Exception e) {
             e.printStackTrace();
-            mensaje = "{\"error\": \"Error interno del servidor\"}";
+            msj = "{\"error\": \"Error interno del servidor\"}";
         }
-        return Response.status(Response.Status.OK).entity(mensaje).build();
+        return Response.status(Response.Status.OK).entity(msj).build();
     }
 }

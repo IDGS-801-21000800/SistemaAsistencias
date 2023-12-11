@@ -12,9 +12,11 @@ import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import java.util.List;
+import utl.dsm.asistencia.core.ControllerAcceso;
 import utl.dsm.asistencia.core.DocenteController;
 import utl.dsm.asistencia.model.Asistencia;
 import utl.dsm.asistencia.model.Horario;
+import utl.dsm.asistencia.model.Maestro;
 
 /**
  *
@@ -24,10 +26,25 @@ import utl.dsm.asistencia.model.Horario;
 @Path("docente")
 public class DocenteREST {
     
+    
+    @Path("loadDocente")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response loadMaestro(
+            @QueryParam("idPersona") int idPersona
+    ) throws Exception {
+        ControllerAcceso ca = new ControllerAcceso();
+        
+        Maestro al = ca.loadMaestro(idPersona);
+        String maestro = new Gson().toJson(al);
+        
+        return Response.status(Response.Status.OK).entity(maestro).build();
+    }
+    
     @Path("getHorario")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getAsistencias(
+    public Response getHorario(
             @QueryParam("idMaestro") int idMaestro
     ) throws Exception {
         DocenteController dcon = new DocenteController();
