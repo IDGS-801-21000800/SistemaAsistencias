@@ -75,6 +75,7 @@ function loadHorario(horario) {
         })
     });
 }
+
 // Función para mostrar o ocultar el card de asistencia
 function toggleAsistenciaCard(idAlumno, idMateria) {
     fetch("/Asistencia_App/api/alumno/getAsistencias?idAlumno=" + idAlumno + "&idMateria=" + idMateria)

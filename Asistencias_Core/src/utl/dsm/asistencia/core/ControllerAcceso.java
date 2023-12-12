@@ -100,6 +100,10 @@ public class ControllerAcceso {
                     )
             );
         }
+        
+        rs.close();
+        ps.close();
+        conn.close();
         return persona;
     }
 
@@ -124,6 +128,10 @@ public class ControllerAcceso {
                     )
             );
         }
+        
+        rs.close();
+        ps.close();
+        conn.close();
         return persona;
     }
 
@@ -148,6 +156,9 @@ public class ControllerAcceso {
                     )
             );
         }
+        rs.close();
+        ps.close();
+        conn.close();
         return persona;
     }
 
@@ -173,6 +184,10 @@ public class ControllerAcceso {
                     )
             );
         }
+        
+        rs.close();
+        ps.close();
+        conn.close();
         return persona;
     }
 }
