@@ -1,15 +1,17 @@
 let idPersona = window.localStorage.getItem("idPersona");
-fetch("/Asistencia_App/api/escolares/loadEscolar?idPersona="+idPersona).then(res=>res.json())
-        .then(data=>console.log(data))
+let ids = 1;
+fetch("/Asistencia_App/api/escolares/loadEscolar?idPersona=" + idPersona).then(res => res.json())
+        .then(data => console.log(data))
 
-export function agregarFecha() {
-      // Obtén el contenedor de fechas
-      const fechasContainer = document.getElementById('fechasContainer');
+function agregarFecha(event) {
+    event.preventDefault();
 
-      // Obtén el primer input de fecha dentro del contenedor
-      const primerInput = fechasContainer.querySelector('input[type="date"]');
-
-      // Clona el primer input y agrega la copia al contenedor
-      const nuevaFecha = primerInput.cloneNode(true);
-      fechasContainer.appendChild(nuevaFecha);
-    }
+    let newInput = document.createElement("input")
+    newInput.type = "date";
+    newInput.name = "fecha";
+    newInput.className = "form-control";
+    ids++;
+    newInput.id = "fechainabil" + ids;
+    
+    document.getElementById('fechasContainer').appendChild(newInput);
+}
