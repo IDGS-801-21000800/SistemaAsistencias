@@ -6,244 +6,572 @@
     <link rel="stylesheet" href="alumno.css" type="text/css">
     <link rel="stylesheet" href="../../Assets/Bootstrap5/css/bootstrap.min.css">
     <title>Alumno</title>
-    <style>
-        body {
-            background-color: #416991; /* Gama de azules para el fondo */
-        }
-
-        /* Estilos personalizados */
-        .encabezado {
-            background-color: black;
-            color: white;
-        }
-
-        .horario {
-            background-color: #757575;
-            color: white;
-        }
-
-        .linea-divisoria-horizontal {
-            border-bottom: 1px solid #dee2e6;
-        }
-
-        .linea-divisoria-vertical {
-            border-right: 1px solid #dee2e6;
-        }
-
-        .seleccionado {
-            background-color: #007bff !important;
-            color: white;
-        }
-
-        .d-none {
-            display: none !important;
-        }
-    </style>
 </head>
 <body>
 
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid" id="fixed-top">
+                <!-- Botón "Sistema Escolar" a la izquierda -->
+                <a class="navbar-brand" href="#">
+                    <h4 class="mb-4 center" id="nombre"></h4>
+                    <span class="d-inline-block align-text-top text-wrap" style="font-size: 20px;">Sistema Escolar</span>
+                </a>
 
-
+                <!-- Botón de cerrar sesión a la derecha -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="cerrarSesion();">
+                            <i class="fas fa-sign-out-alt me-2"></i>
+                            <span class="d-inline-block align-text-top text-wrap" style="font-size: 20px;">Cerrar Sesi&oacute;n</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
     <div class="card card-three mt-5">
         <div class="card-three-header">
             <h5 class="card-title">Horario</h5>
         </div>
         <div class="card-three-body">
             <div class="table-container">
-                <h4 class="mb-4 center" id="nombre"></h4>
-                <h5 class="mb-4 center"><center><b><i>Horario del ciclo escolar</i></b></center></h5>
 
                 <table border="0" class="table mt-4">
-                    <thead class="encabezado">
+                    <thead class=" encabezado linea-divisoria-horizontal">
                         <tr>
-                            <th>Hora</th>
-                            <th>Lunes</th>
-                            <th>Martes</th>
-                            <th>Miercoles</th>
-                            <th>Jueves</th>
-                            <th>Viernes</th>
+                            <th class="col-2 linea-divisoria-vertical horario-celda">Hora</th>
+                            <th class="col-2 linea-divisoria-vertical horario-celda">Lunes</th>
+                            <th class="col-2 linea-divisoria-vertical horario-celda">Martes</th>
+                            <th class="col-2 linea-divisoria-vertical horario-celda">Miercoles</th>
+                            <th class="col-2 linea-divisoria-vertical horario-celda">Jueves</th>
+                            <th class="col-2 linea-divisoria-vertical horario-celda">Viernes</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>5:10 pm - 6:00 pm</td>
-                            <td class="materia-access" id="lunes-1"><div></div></td>
-                            <td class="materia-access" id="martes-1"><div></div></td>
-                            <td class="materia-access" id="miercoles-1"><div></div></td>
-                            <td class="materia-access" id="jueves-1"><div></div></td>
-                            <td class="materia-access" id="viernes-1"><div></div></td>
+                            <td class="col-2 linea-divisoria-vertical" >5:10 pm - 6:00 pm</td>
+                            <td class="materia-access col-2 linea-divisoria-vertical" id="lunes-1"><div></div></td>
+                            <td class="materia-access col-2 linea-divisoria-vertical" id="martes-1"><div></div></td>
+                            <td class="materia-access col-2 linea-divisoria-vertical" id="miercoles-1"><div></div></td>
+                            <td class="materia-access col-2 linea-divisoria-vertical" id="jueves-1"><div></div></td>
+                            <td class="materia-access col-2 linea-divisoria-vertical" id="viernes-1"><div></div></td>
                         </tr>
                         <tr>
-                            <td>6:00 pm - 6:50 pm</td>
-                            <td class="materia-access" id="lunes-2"><div></div></td>
-                            <td class="materia-access" id="martes-2"><div></div></td>
-                            <td class="materia-access" id="miercoles-2"><div></div></td>
-                            <td class="materia-access" id="jueves-2"><div></div></td>
-                            <td class="materia-access" id="viernes-2"><div></div></td>
+                            <td class=" col-2 linea-divisoria-vertical" >6:00 pm - 6:50 pm</td>
+                            <td class="materia-access col-2 linea-divisoria-vertical" id="lunes-2"><div></div></td>
+                            <td class="materia-access col-2 linea-divisoria-vertical" id="martes-2"><div></div></td>
+                            <td class="materia-access col-2 linea-divisoria-vertical" id="miercoles-2"><div></div></td>
+                            <td class="materia-access col-2 linea-divisoria-vertical" id="jueves-2"><div></div></td>
+                            <td class="materia-access col-2 linea-divisoria-vertical" id="viernes-2"><div></div></td>
                         </tr>
                         <tr>
-                            <td>6:50 pm - 7:40 pm</td>
-                            <td class="materia-access" id="lunes-3"><div></div></td>
-                            <td class="materia-access" id="martes-3"><div></div></td>
-                            <td class="materia-access" id="miercoles-3"><div></div></td>
-                            <td class="materia-access" id="jueves-3"><div></div></td>
-                            <td class="materia-access" id="viernes-3"><div></div></td>
+                            <td class=" col-2 linea-divisoria-vertical" >6:50 pm - 7:40 pm</td>
+                            <td class="materia-access col-2 linea-divisoria-vertical" id="lunes-3"><div></div></td>
+                            <td class="materia-access col-2 linea-divisoria-vertical" id="martes-3"><div></div></td>
+                            <td class="materia-access col-2 linea-divisoria-vertical" id="miercoles-3"><div></div></td>
+                            <td class="materia-access col-2 linea-divisoria-vertical" id="jueves-3"><div></div></td>
+                            <td class="materia-access col-2 linea-divisoria-vertical" id="viernes-3"><div></div></td>
                         </tr>
                         <tr>
-                            <td>7:40 pm - 8:30 pm</td>
-                            <td class="materia-access" id="lunes-4"><div></div></td>
-                            <td class="materia-access" id="martes-4"><div></div></td>
-                            <td class="materia-access" id="miercoles-4"><div></div></td>
-                            <td class="materia-access" id="jueves-4"><div></div></td>
-                            <td class="materia-access" id="viernes-4"><div></div></td>
+                            <td class=" col-2 linea-divisoria-vertical" >7:40 pm - 8:30 pm</td>
+                            <td class="materia-access col-2 linea-divisoria-vertical" id="lunes-4"><div></div></td>
+                            <td class="materia-access col-2 linea-divisoria-vertical" id="martes-4"><div></div></td>
+                            <td class="materia-access col-2 linea-divisoria-vertical" id="miercoles-4"><div></div></td>
+                            <td class="materia-access col-2 linea-divisoria-vertical" id="jueves-4"><div></div></td>
+                            <td class="materia-access col-2 linea-divisoria-vertical" id="viernes-4"><div></div></td>
                         </tr>
                         <tr>
-                            <td>8:30 pm - 9:20 pm</td>
-                            <td class="materia-access" id="lunes-5"><div></div></td>
-                            <td class="materia-access" id="martes-5"><div></div></td>
-                            <td class="materia-access" id="miercoles-5"><div></div></td>
-                            <td class="materia-access" id="jueves-5"><div></div></td>
-                            <td class="materia-access" id="viernes-5"><div></div></td>
+                            <td class=" col-2 linea-divisoria-vertical" >8:30 pm - 9:20 pm</td>
+                            <td class="materia-access col-2 linea-divisoria-vertical" id="lunes-5"><div></div></td>
+                            <td class="materia-access col-2 linea-divisoria-vertical" id="martes-5"><div></div></td>
+                            <td class="materia-access col-2 linea-divisoria-vertical" id="miercoles-5"><div></div></td>
+                            <td class="materia-access col-2 linea-divisoria-vertical" id="jueves-5"><div></div></td>
+                            <td class="materia-access col-2 linea-divisoria-vertical" id="viernes-5"><div></div></td>
                         </tr>
-                    </tbody>
-                </table>
-
-                <div class="container mt-4">
-                    <div class="row encabezado linea-divisoria-horizontal">
-                        <div class="col linea-divisoria-vertical">
-                            <h5>Horario</h5>
-                        </div>
-                        <div class="col-2 linea-divisoria-vertical">
-                            <h5>Lunes </h5>
-                        </div>
-                        <div class="col-2 linea-divisoria-vertical">
-                            <h5>Martes</h5>
-                        </div>
-                        <div class="col-2 linea-divisoria-vertical">
-                            <h5>Miércoles</h5>
-                        </div>
-                        <div class="col-2 linea-divisoria-vertical">
-                            <h5>Jueves</h5>
-                        </div>
-                        <div class="col-2 linea-divisoria-vertical">
-                            <h5>Viernes</h5>
-                        </div>
-                    </div>
-
-                    <div class="row encabezado linea-divisoria-horizontal">
-                        <div class="col-2 linea-divisoria-vertical horario-celda" data-materia="NombreMateria1" onclick="mostrarInformacion('lu1', 'Profesor1')">Horario/Día</div>
-                        <div class="col-2 linea-divisoria-vertical horario-celda" data-materia="NombreMateria1" onclick="mostrarInformacion('lu1', 'Profesor1')">Lunes 1</div>
-                        <div class="col-2 linea-divisoria-vertical horario-celda" data-materia="NombreMateria2" onclick="mostrarInformacion('ma1', 'Profesor2')">Martes 1</div>
-                        <div class="col-2 linea-divisoria-vertical horario-celda" data-materia="NombreMateria3" onclick="mostrarInformacion('mi1', 'Profesor3')">Miércoles 1</div>
-                        <div class="col-2 linea-divisoria-vertical horario-celda" data-materia="NombreMateria4" onclick="mostrarInformacion('ju1', 'Profesor4')">Jueves 1</div>
-                        <div class="col-2 linea-divisoria-vertical horario-celda" data-materia="NombreMateria5" onclick="mostrarInformacion('vi1', 'Profesor5')">Viernes 1</div>
-                    </div>
-
-                    <div class="row horario linea-divisoria-horizontal">
-                        <div class="col linea-divisoria-vertical">5:10 pm - 6:00 pm</div>
-                        <div class="col-2 linea-divisoria-vertical" id="lu2"></div>
-                        <div class="col-2 linea-divisoria-vertical" id="ma2"></div>
-                        <div class="col-2 linea-divisoria-vertical"id="mi2"></div>
-                        <div class="col-2 linea-divisoria-vertical"id="ju2"></div>
-                        <div class="col-2 linea-divisoria-vertical" id="vi2"></div>
-                    </div>
-
-                    <div class="row horario linea-divisoria-horizontal">
-                        <div class="col linea-divisoria-vertical">6:00 pm - 6:50 pm</div>
-                        <div class="col-2 linea-divisoria-vertical" id="lu3"></div>
-                        <div class="col-2 linea-divisoria-vertical" id="ma3"></div>
-                        <div class="col-2 linea-divisoria-vertical"id="mi3"></div>
-                        <div class="col-2 linea-divisoria-vertical"id="ju3"></div>
-                        <div class="col-2 linea-divisoria-vertical" id="vi3"></div>
-                    </div>
-
-                    <div class="row horario linea-divisoria-horizontal">
-                        <div class="col linea-divisoria-vertical">6:50 pm - 7:40 pm</div>
-                        <div class="col-2 linea-divisoria-vertical" id="lu4"></div>
-                        <div class="col-2 linea-divisoria-vertical" id="ma4"></div>
-                        <div class="col-2 linea-divisoria-vertical"id="mi4"></div>
-                        <div class="col-2 linea-divisoria-vertical"id="ju4"></div>
-                        <div class="col-2 linea-divisoria-vertical" id="vi4"></div>
-                    </div>
-
-                    <div class="row horario linea-divisoria-horizontal">
-                        <div class="col linea-divisoria-vertical">7:40 pm - 8:30 pm</div>
-                        <div class="col-2 linea-divisoria-vertical" id="lu5"></div>
-                        <div class="col-2 linea-divisoria-vertical" id="ma5"></div>
-                        <div class="col-2 linea-divisoria-vertical"id="mi5"></div>
-                        <div class="col-2 linea-divisoria-vertical"id="ju5"></div>
-                        <div class="col-2 linea-divisoria-vertical" id="vi5"></div>
-                    </div>
-
-                    <div class="row horario linea-divisoria-horizontal">
-                        <div class="col linea-divisoria-vertical">8:30 pm - 9:20 pm</div>
-                        <div class="col-2 linea-divisoria-vertical" id="lu6"></div>
-                        <div class="col-2 linea-divisoria-vertical" id="ma6"></div>
-                        <div class="col-2 linea-divisoria-vertical"id="mi6"></div>
-                        <div class="col-2 linea-divisoria-vertical"id="ju6"></div>
-                        <div class="col-2 linea-divisoria-vertical" id="vi6"></div>  </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Card de Asistencia -->
-
-    <!-- Card de Asistencia -->
-    <div class="card card-three mt-5 d-none" id="asistenciaCard">
-        <div class="card-three-header">
-            <h5 class="card-title">Asistencia de <span id="materiaNombre">Materia</span></h5>
-        </div>
-        <div class="card-three-body">
-            <div class="table-container mx-auto"> <!-- Agregado mx-auto para centrar la tabla -->
-                <div class="row mb-3">
-                    <div class="col-md-4">
-                        <label for="fechaDesde">Desde:</label>
-                        <input type="date" id="fechaDesde" class="form-control">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="fechaHasta">Hasta:</label>
-                        <input type="date" id="fechaHasta" class="form-control">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="parcialSelect">Parcial:</label>
-                        <select id="parcialSelect" class="form-select">
-                            <option value="parcial">Parcial</option>
-                            <option value="parcial1">Parcial 1</option>
-                            <option value="parcial2">Parcial 2</option>
-                            <option value="parcial3">Parcial 3</option>
-                        </select>
-                    </div>
-                </div>
-                <h5 class="mb-4">Registros</h5>
-                <table class="table table-bordered table-striped">
-                    <thead style="background-color: #100670; color: white;">
-                        <tr>
-                            <th scope="col">Fecha</th>
-                            <th scope="col">Día</th>
-                            <th scope="col">Horario</th>
-                            <th scope="col">Estatus de Asistencia</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td>Lunes</td>
-                            <td>5:10-6:00</td>
-                            <td>A</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Lunes</td>
-                            <td>6:00-6:50</td>
-                            <td>A</td>
-                        </tr>
-                        <!-- ... Más filas ... -->
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+
+    <!-- Card de Asistencia -->
+
+    <div class="container">
+        <h1>Lista de asistencia</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>N</th>
+                            <th>Alumno</th>
+                            <th colspan="4" class="dia">Lunes</th>
+                            <th colspan="4" class="dia">Miércoles</th>
+                            <th colspan="4" class="dia">Lunes</th>
+                            <th colspan="4" class="dia">Miércoles</th>
+                            <th colspan="4" class="dia">Lunes</th>
+                            <th colspan="4" class="dia">Miércoles</th>
+                            <th colspan="4" class="dia">Lunes</th>
+                            <th colspan="4" class="dia">Miércoles</th>
+                            <th colspan="4" class="dia">Lunes</th>
+                            <th colspan="4" class="dia">Miércoles</th>
+                            <th colspan="4" class="dia">Lunes</th>
+                            <th colspan="4" class="dia">Miércoles</th>
+                            <!-- Puedes agregar más días aquí -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="3">1</td>
+                            <td rowspan="3" id="nombre"></td>
+                            <td colspan="2">Horario 1</td>
+                            <td colspan="2">Horario 2</td>
+                            <td colspan="2">Horario 1</td>
+                            <td colspan="2">Horario 2</td>
+
+
+
+                            <td colspan="2">Horario 1</td>
+                            <td colspan="2">Horario 2</td>
+                            <td colspan="2">Horario 1</td>
+                            <td colspan="2">Horario 2</td>
+                            <td colspan="2">Horario 1</td>
+                            <td colspan="2">Horario 2</td>
+                            <td colspan="2">Horario 1</td>
+                            <td colspan="2">Horario 2</td>
+
+                            <td colspan="2">Horario 1</td>
+                            <td colspan="2">Horario 2</td>
+                            <td colspan="2">Horario 1</td>
+                            <td colspan="2">Horario 2</td>
+                            <td colspan="2">Horario 1</td>
+                            <td colspan="2">Horario 2</td>
+                            <td colspan="2">Horario 1</td>
+                            <td colspan="2">Horario 2</td>
+                            <td colspan="2">Horario 1</td>
+                            <td colspan="2">Horario 2</td>
+                            <td colspan="2">Horario 1</td>
+                            <td colspan="2">Horario 2</td>
+                            <!-- Puedes agregar más horarios aquí -->
+                        </tr>
+                        <tr>
+                            <td>5:10pm</td>
+                            <td>6:10pm</td>
+                            <td>6:10pm</td>
+                            <td>7:40pm</td>
+                            <td>5:10pm</td>
+                            <td>6:10pm</td>
+                            <td>6:10pm</td>
+                            <td>7:40pm</td>
+
+                            <td>5:10pm</td>
+                            <td>6:10pm</td>
+                            <td>6:10pm</td>
+                            <td>7:40pm</td>
+                            <td>5:10pm</td>
+                            <td>6:10pm</td>
+                            <td>6:10pm</td>
+                            <td>7:40pm</td>
+
+                            <td>5:10pm</td>
+                            <td>6:10pm</td>
+                            <td>6:10pm</td>
+                            <td>7:40pm</td>
+                            <td>5:10pm</td>
+                            <td>6:10pm</td>
+                            <td>6:10pm</td>
+                            <td>7:40pm</td>
+
+                            <td>5:10pm</td>
+                            <td>6:10pm</td>
+                            <td>6:10pm</td>
+                            <td>7:40pm</td>
+                            <td>5:10pm</td>
+                            <td>6:10pm</td>
+                            <td>6:10pm</td>
+                            <td>7:40pm</td>
+
+                            <td>5:10pm</td>
+                            <td>6:10pm</td>
+                            <td>6:10pm</td>
+                            <td>7:40pm</td>
+                            <td>5:10pm</td>
+                            <td>6:10pm</td>
+                            <td>6:10pm</td>
+                            <td>7:40pm</td>
+
+                            <td>5:10pm</td>
+                            <td>6:10pm</td>
+                            <td>6:10pm</td>
+                            <td>7:40pm</td>
+                            <td>5:10pm</td>
+                            <td>6:10pm</td>
+                            <td>6:10pm</td>
+                            <td>7:40pm</td>
+                            <!-- Puedes agregar más horarios aquí -->
+                        </tr>
+
+
+                        <tr>
+                            <td><select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select></td>
+                            <td>
+                                <select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select>
+                            </td>
+                            <td><select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select></td>
+                            <td>
+                                <select class="form-control" name="lunes-1-horario-2">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select>
+                            </td>
+                            <td><select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select></td>
+                            <td>
+                                <select class="form-control" name="miercoles-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select>
+                            </td>
+                            <td><select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select></td>
+                            <td>
+                                <select class="form-control" name="miercoles-1-horario-2">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select>
+                            </td>
+
+
+                            <td><select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select></td>
+                            <td>
+                                <select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select>
+                            </td>
+                            <td><select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select></td>
+                            <td>
+                                <select class="form-control" name="lunes-1-horario-2">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select>
+                            </td>
+                            <td><select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select></td>
+                            <td>
+                                <select class="form-control" name="miercoles-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select>
+                            </td>
+                            <td><select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select></td>
+                            <td>
+                                <select class="form-control" name="miercoles-1-horario-2">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select>
+                            </td>
+
+
+
+
+                            <td><select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select></td>
+                            <td>
+                                <select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select>
+                            </td>
+                            <td><select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select></td>
+                            <td>
+                                <select class="form-control" name="lunes-1-horario-2">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select>
+                            </td>
+                            <td><select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select></td>
+                            <td>
+                                <select class="form-control" name="miercoles-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select>
+                            </td>
+                            <td><select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select></td>
+                            <td>
+                                <select class="form-control" name="miercoles-1-horario-2">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select>
+                            </td>
+
+
+                            <td><select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select></td>
+                            <td>
+                                <select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select>
+                            </td>
+                            <td><select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select></td>
+                            <td>
+                                <select class="form-control" name="lunes-1-horario-2">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select>
+                            </td>
+                            <td><select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select></td>
+                            <td>
+                                <select class="form-control" name="miercoles-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select>
+                            </td>
+                            <td><select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select></td>
+                            <td>
+                                <select class="form-control" name="miercoles-1-horario-2">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select>
+                            </td>
+
+
+                            <td><select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select></td>
+                            <td>
+                                <select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select>
+                            </td>
+                            <td><select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select></td>
+                            <td>
+                                <select class="form-control" name="lunes-1-horario-2">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select>
+                            </td>
+                            <td><select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select></td>
+                            <td>
+                                <select class="form-control" name="miercoles-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select>
+                            </td>
+                            <td><select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select></td>
+                            <td>
+                                <select class="form-control" name="miercoles-1-horario-2">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select>
+                            </td>
+
+
+                            <td><select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select></td>
+                            <td>
+                                <select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select>
+                            </td>
+                            <td><select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select></td>
+                            <td>
+                                <select class="form-control" name="lunes-1-horario-2">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select>
+                            </td>
+                            <td><select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select></td>
+                            <td>
+                                <select class="form-control" name="miercoles-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select>
+                            </td>
+                            <td><select class="form-control" name="lunes-1-horario-1">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select></td>
+                            <td>
+                                <select class="form-control" name="miercoles-1-horario-2">
+                                    <option value="A">A</option>
+                                    <option value="F">F</option>
+                                    <option value="R">R</option>
+                                    <option value="J">J</option>
+                                </select>
+                            </td>
+                        <!-- Repetir para otros alumnos y horarios -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
     <script src="controladorAlumno.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../Assets/Sweetalert2/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="../../Assets/Sweetalert2/sweetalert2.min.css"/>
 </body>
 </html>

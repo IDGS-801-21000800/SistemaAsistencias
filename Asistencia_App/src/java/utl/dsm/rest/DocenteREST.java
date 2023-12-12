@@ -5,7 +5,9 @@
 package utl.dsm.rest;
 
 import com.google.gson.Gson;
+import jakarta.ws.rs.FormParam;
 import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
@@ -68,9 +70,25 @@ public class DocenteREST {
         String jsonAsistenciasPro = new Gson().toJson(asistenciasPro);
         return Response.status(Response.Status.OK).entity(jsonAsistenciasPro).build();
     }
+    /*
+    @Path("saveAsistencia")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response setDiasInhabil(
+            @FormParam("dias") String jsonDias
+    ) throws Exception {
+        DocenteController dcon = new DocenteController();
+
+        DiaInhabil[] diasR = new Gson().fromJson(jsonDias, DiaInhabil[].class);
+        List<DiaInhabil> dias = new ArrayList<>();
+        dias = Arrays.asList(diasR);
+        
+        dc.addDiainhabil(dias);
+        
+        return Response.status(Response.Status.OK).entity("").build();
+    }
     
     /*        
-        DocenteController dcon = new DocenteController();
         dcon.agregarAsistencia(idAlumno, "F", idmateria, idMaestro, idGrupo, "viernes");
      */
 }

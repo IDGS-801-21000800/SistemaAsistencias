@@ -51,6 +51,10 @@ function login() {
                         Swal.fire('¡Bienvenido Maestro!', '', 'success').then(() => {
                             window.location.href = 'Vista/ModuloMaestro/maestro.html';
                         });
+                    } else if (dosPrimerasLetras === 'DE') {
+                        Swal.fire('¡Bienvenido Sistema Escolar!', '', 'success').then(() => {
+                            window.location.href = 'Vista/ModuloEscolares/escolares.html';
+                        });
                     } else {
                         // Manejar otras condiciones o mostrar un mensaje de error
                         Swal.fire('Clave no reconocida', '', 'error');

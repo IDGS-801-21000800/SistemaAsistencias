@@ -1,17 +1,22 @@
 let idPersona = window.localStorage.getItem("idPersona");
+let idGrupo
 fetch("/Asistencia_App/api/alumno/loadAlumno?idPersona=" + idPersona).then(res => res.json())
         .then(data => {
             let {persona, grupo} = data;
             window.localStorage.setItem("idGrupo", grupo.idGrupo);
             document.getElementById("nombre").innerHTML = persona.nombre + " " + persona.primerApellido + " " + persona.segundoApellido;
+            loadGrupo();
             console.log(data)
         })
 
-let idGrupo = window.localStorage.getItem("idGrupo")
-fetch("/Asistencia_App/api/alumno/getHorario?idGrupo=" + idGrupo).then(res => res.json())
-        .then(data => {
-            loadHorario(data)
-        })
+function loadGrupo() {
+    idGrupo = window.localStorage.getItem("idGrupo")
+    fetch("/Asistencia_App/api/alumno/getHorario?idGrupo=" + idGrupo).then(res => res.json())
+            .then(data => {
+                idGrupo = window.localStorage.getItem("idGrupo")
+                loadHorario(data)
+            })
+}
 
 
 function loadHorario(horario) {
@@ -70,6 +75,8 @@ function loadHorario(horario) {
         document.getElementById(idCasilla).rowSpan = altura;
         document.getElementById(idCasilla).value = materia.idMateria;
 
+        document.getElementById(idCasilla).className = "horario-content";
+
         document.getElementById(idCasilla).addEventListener("click", (evnt) => {
             toggleAsistenciaCard(idPersona, evnt.target.value)
         })
@@ -95,3 +102,13 @@ function mostrarInformacion(dia, profesor) {
     toggleAsistenciaCard();
 }
 
+function cerrarSesion() {           
+            Swal.fire({
+                icon: 'info',
+                title: 'Sesión cerrada',
+                text: 'Sesión cerrada correctamente.'
+            }).then(() => {
+                // Redireccionar a la página principal
+                window.location.href = '/Asistencia_App/index.html';
+            });
+        }

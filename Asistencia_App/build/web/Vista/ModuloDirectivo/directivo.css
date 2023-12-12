@@ -115,3 +115,8 @@ body {
 .card-one-body:hover{
     box-shadow: inset 0 0 0 3px gray;
 }
+
+.horario-content:hover{
+    background: #d9d9d9dd;
+    box-shadow: inset 0 0 0 3px gray;
+}

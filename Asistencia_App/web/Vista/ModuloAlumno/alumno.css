@@ -4,6 +4,10 @@ body {
     padding: 0;
 }
 
+tbody, td, tfoot, th, thead, tr {
+    height: 50px;
+}
+
 /* Estilos del primer card */
 .card-one {
     margin-top: 50px;
@@ -88,6 +92,44 @@ th{
     width: 198px;
     border: 2px solid white;
 }
-.materia-access:hover{
-    border: 2px solid black;
+.horario-content{
+    font-size: 12;
+    height: 3rem;
+}
+
+.horario-content:hover{
+    background: #d9d9d9dd;
+    box-shadow: inset 0 0 0 3px gray;
+}
+
+/* Estilos personalizados */
+.encabezado {
+    background-color: black;
+    color: white;
+}
+
+.horario {
+    background-color: #757575;
+    color: white;
+}
+
+.linea-divisoria-horizontal {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.linea-divisoria-vertical {
+    border-right: 1px solid #dee2e6;
+}
+
+.seleccionado {
+    background-color: #007bff !important;
+    color: white;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.fixed-top{
+    background: gray;
 }

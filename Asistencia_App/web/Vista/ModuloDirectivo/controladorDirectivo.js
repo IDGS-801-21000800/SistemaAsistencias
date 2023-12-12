@@ -18,11 +18,14 @@ fetch("/Asistencia_App/api/directivo/getGrupos").then(res => res.json())
         })
 
 function loadHorario(idGrupo) {
-    fetch("/Asistencia_App/api/alumno/getHorario?idGrupo=" + idGrupo).then(res => res.json())
+    let horario
+    let url = "/Asistencia_App/api/directivo/getHorario?idGrupo=" + idGrupo
+    fetch(url).then(res => res.json())
             .then(data => {
-                let horario = data;
+                horario = data
+
                 horario.map(item => {
-                    let {dia, horaInicio, horaFin, materia, maestro} = item
+                    let {dia, horaInicio, horaFin, materia, grupo} = item
                     let spe;
                     switch (horaInicio) {
                         case"17:10:00":
@@ -72,16 +75,39 @@ function loadHorario(idGrupo) {
                     }
 
                     let idCasilla = dia + "-" + spe;
-                    document.getElementById(idCasilla).innerHTML = materia.materia + "<br>" + maestro.persona.nombre + " " + maestro.persona.primerApellido + " " + maestro.persona.segundoApellido
+                    document.getElementById(idCasilla).innerHTML = materia.materia + "<br>" + grupo.grado + " " + grupo.grupo
                     document.getElementById(idCasilla).rowSpan = altura;
                     document.getElementById(idCasilla).value = materia.idMateria;
 
+                    document.getElementById(idCasilla).className = "horario-content";
+
                     document.getElementById(idCasilla).addEventListener("click", (evnt) => {
-                        toggleAsistenciaCard(idPersona, evnt.target.value)
+                        toggleAsistenciaCard(grupo.idGrupo, evnt.target.value)
                     })
                 });
             })
 }
 
-
+function toggleAsistenciaCard(idGrupo, idMateria) {
+    let url = "/Asistencia_App/api/directivo/getAsistencias?idGrupo=" + idGrupo + "&idMateria=" + idMateria
+    console.log(url)
+    fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                //document.getElementById('materiaNombre').innerHTML = data[0].horario.materia.materia;
+                //const asistenciaCard = document.getElementById('asistenciaCard');
+                //asistenciaCard.classList.toggle('d-none');
+            })
+}
 //gruposContainer
+function cerrarSesion() {           
+            Swal.fire({
+                icon: 'info',
+                title: 'Sesión cerrada',
+                text: 'Sesión cerrada correctamente.'
+            }).then(() => {
+                // Redireccionar a la página principal
+                window.location.href = '/Asistencia_App/index.html';
+            });
+        }

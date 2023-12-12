@@ -183,3 +183,13 @@ function getDiaHora(dia, calendario) {
             });
 
 }
+function cerrarSesion() {           
+            Swal.fire({
+                icon: 'info',
+                title: 'Sesión cerrada',
+                text: 'Sesión cerrada correctamente.'
+            }).then(() => {
+                // Redireccionar a la página principal
+                window.location.href = '/Asistencia_App/index.html';
+            });
+        }
